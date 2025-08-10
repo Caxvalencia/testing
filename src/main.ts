@@ -1,9 +1,9 @@
-const assistant = document.getElementById('assistant') as HTMLDivElement;
+const btn = document.getElementById('btn') as HTMLButtonElement;
 
-assistant.addEventListener('click', () => {
+btn.addEventListener('click', () => {
   const utterance = new SpeechSynthesisUtterance('Hola, ¿en qué puedo ayudarte?');
   utterance.lang = 'es-ES';
-  utterance.onstart = () => assistant.classList.add('speaking');
-  utterance.onend = () => assistant.classList.remove('speaking');
+  utterance.onstart = () => btn.classList.add('speaking');
+  utterance.onend = () => btn.classList.remove('speaking');
   speechSynthesis.speak(utterance);
 });

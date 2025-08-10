@@ -6,9 +6,25 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="assistant" class="circle">
-    <span class="mic">🎤</span>
+  <div class="bg">
+    <img src="https://i.ibb.co/bMvc7Zr6/Vibrant-Summer-Meadow-Watercolor.png" alt="">
+    <img src="https://i.ibb.co/ZRH04pV3/Vibrant-Summer-Meadow-Watercolor-1.png" alt="">
+    <img src="https://i.ibb.co/bMvc7Zr6/Vibrant-Summer-Meadow-Watercolor.png" alt="">
   </div>
+
+  <button id="btn" class="glass"></button>
+
+  <svg style="position:absolute;width:0;height:0">
+    <filter id="frosted" primitiveUnits="objectBoundingBox">
+      <feImage href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PBQnYQAAAABJRU5ErkJggg==" x="0" y="0" width="1" height="1" result="map"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="0.02" result="blur"/>
+      <feDisplacementMap id="disp" in="blur" in2="map" scale="1" xChannelSelector="R" yChannelSelector="G">
+        <animate attributeName="scale" to="1.4" dur="0.3s" begin="btn.mouseover"  fill="freeze"/>
+        <animate attributeName="scale" to="1" dur="0.3s" begin="btn.mouseout"   fill="freeze"/>
+      </feDisplacementMap>
+    </filter>
+  </svg>
+
   <script src="dist/main.js"></script>
 </body>
 </html>
